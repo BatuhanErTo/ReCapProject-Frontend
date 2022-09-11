@@ -1,0 +1,83 @@
+<div class="container">
+  <div style="padding-top: 20px" class="row">
+    <div style="padding-right: 20px" class="col-8">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="1800"
+        *ngIf="carImages"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item {{ getActiveString(carImage) }}"
+            *ngFor="let carImage of carImages"
+          >
+            <img
+              [src]="getImage(carImage)"
+              class="d-block w-100 rounded-3"
+              alt="..."
+              height="400px"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div *ngIf="carDetail[0]">
+        <hr />
+        <label><b>Açıklama :</b></label
+        >{{ carDetail[0].description }}
+      </div>
+    </div>
+
+    <div
+      style="background-color: rgb(245, 245, 245)"
+      class="col-4"
+      *ngIf="carDetail[0]"
+    >
+      <hr />
+      <label><b>Marka :</b></label
+      >{{ carDetail[0].brandName }}
+      <hr />
+      <label><b>Araç Adı :</b></label
+      >{{ carDetail[0].carName }}
+      <hr />
+      <label><b>Renk :</b></label
+      >{{ carDetail[0].colorName }}
+      <hr />
+      <label><b>Model Yılı :</b></label
+      >{{ carDetail[0].modelYear }}
+      <hr />
+      <label><b>Günlük Kiralama Ücreti :</b></label
+      >{{ carDetail[0].dailyPrice }}.₺
+      <hr />
+
+      <button class="btn btn-outline-success">Kirala</button>
+      <button
+        style="margin-left: 10px"
+        routerLink="/cars"
+        class="btn btn-outline-warning text-dark"
+      >
+        Başka Araç Seç
+      </button>
+    </div>
+  </div>
+</div>

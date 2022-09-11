@@ -6,7 +6,7 @@
   >
   Tüm Markalar</li>
   <li
-    (click)="setCurrentBrandClass(brand)"
+   (click)="setCurrentBrandClass(brand)"
     *ngFor="let brand of brands"
     routerLink="cars/brand/{{brand.id}}"
     [class]=" getCurentBrandClass(brand)"
