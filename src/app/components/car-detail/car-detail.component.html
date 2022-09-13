@@ -41,33 +41,33 @@
         </button>
       </div>
 
-      <div *ngIf="carDetail[0]">
+      <div *ngIf="carDetail">
         <hr />
         <label><b>Açıklama :</b></label
-        >{{ carDetail[0].description }}
+        >{{ carDetail.description }}
       </div>
     </div>
 
     <div
       style="background-color: rgb(245, 245, 245)"
       class="col-4"
-      *ngIf="carDetail[0]"
+      *ngIf="carDetail"
     >
       <hr />
       <label><b>Marka :</b></label
-      >{{ carDetail[0].brandName }}
+      >{{ carDetail.brandName }}
       <hr />
       <label><b>Araç Adı :</b></label
-      >{{ carDetail[0].carName }}
+      >{{ carDetail.carName }}
       <hr />
       <label><b>Renk :</b></label
-      >{{ carDetail[0].colorName }}
+      >{{ carDetail.colorName }}
       <hr />
       <label><b>Model Yılı :</b></label
-      >{{ carDetail[0].modelYear }}
+      >{{ carDetail.modelYear }}
       <hr />
       <label><b>Günlük Kiralama Ücreti :</b></label
-      >{{ carDetail[0].dailyPrice }}.₺
+      >{{ carDetail.dailyPrice }}.₺
       <hr />
 
       <button class="btn btn-outline-success">Kirala</button>

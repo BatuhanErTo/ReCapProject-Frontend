@@ -12,7 +12,7 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarDetailComponent implements OnInit {
   carImages: CarImage[]
-  carDetail : Car[]
+  carDetail : Car
   constructor(private carDetailService: CarDetailService,private carService: CarService ,private activatedRoute: ActivatedRoute) {
   }
 
@@ -33,7 +33,7 @@ export class CarDetailComponent implements OnInit {
 
   getCarDetails(carId: number){
     this.carService.getCarsById(carId).subscribe(response => {
-      this.carDetail = response.data
+     this.carDetail = response.data
     })
   }
 
