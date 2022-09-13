@@ -19,6 +19,8 @@ export class CarComponent implements OnInit {
         this.getCarsByBrand(params["brandId"])
       }else if(params["colorId"]){
         this.getCarsByColor(params["colorId"])
+      }else if(params["colorId"],params["brandId"]){
+        this.getCarsByBoth(params["colorId"],params["brandId"])
       }
       else{
         this.getCars()
@@ -43,6 +45,12 @@ export class CarComponent implements OnInit {
       this.cars = response.data
     })
   };
+
+  getCarsByBoth(colorId:number,brandId:number){
+    this.carService.getCarsByColorBrand(colorId,brandId).subscribe(response => {
+      this.cars = response.data
+    })
+  }
 
   getImage(car : Car):string{
     return "https://localhost:44380/Uploads/Images/"+car.carImage[0].imagePath
