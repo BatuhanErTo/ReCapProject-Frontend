@@ -11,7 +11,8 @@ import { NaviComponent } from './components/navi/navi.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
-
+import { BrandFilterPipe } from './pipes/brand-filter.pipe';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +22,14 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
     NaviComponent,
     CarComponent,
     RentalComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    BrandFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

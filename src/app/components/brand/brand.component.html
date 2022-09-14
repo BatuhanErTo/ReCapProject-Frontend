@@ -1,3 +1,7 @@
+<div class="mb-3">
+  <label for="filterText" class="form-label">Markalar</label>
+  <input type="email" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="marka ismi giriniz">
+</div>
 <ul class="list-group">
   <li
     (click)="setAllBrandClass()"
@@ -7,7 +11,7 @@
   Tüm Markalar</li>
   <li
    (click)="setCurrentBrandClass(brand)"
-    *ngFor="let brand of brands"
+    *ngFor="let brand of brands | brandFilter:filterText"
     routerLink="cars/brand/{{brand.id}}"
     [class]=" getCurentBrandClass(brand)"
   >
