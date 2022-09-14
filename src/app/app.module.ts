@@ -13,6 +13,7 @@ import { RentalComponent } from './components/rental/rental.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ColorFilterPipe } from './pipes/color-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     CarComponent,
     RentalComponent,
     CarDetailComponent,
-    BrandFilterPipe
+    BrandFilterPipe,
+    ColorFilterPipe
   ],
   imports: [
     BrowserModule,

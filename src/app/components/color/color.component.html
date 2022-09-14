@@ -1,8 +1,12 @@
+<div class="mb-3">
+  <label for="filterText" class="form-label">Renkler</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="renk giriniz">
+</div>
 <ul class="list-group">
   <li (click)="setAllColorClass()" routerLink="cars" [class]="getAllColorClass()">Tüm Renkler</li>
   <li
     (click)="setColorClass(color)"
-    *ngFor="let color of colors"
+    *ngFor="let color of colors | colorFilter:filterText"
     routerLink="cars/color/{{color.id}}"
     [class]="getColorClass(color)"
   >
